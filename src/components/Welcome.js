@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import welcome from "../img/welcome.png";
 
-export default function Welcome() {
+export default function Welcome(props) {
+
+  const {reqApi} = props;
+
+
   const ImageLogo = styled.img`
     width: 450px;
     height: auto;
@@ -26,7 +30,7 @@ export default function Welcome() {
   return (
     <ContentLogo>
       <WelcomeText>Dar click a la imagen :)</WelcomeText>
-      <ImageLogo src={welcome}/>
+      <ImageLogo src={welcome} onClick={reqApi}/>
     </ContentLogo>
   );
 }
